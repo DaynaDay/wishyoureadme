@@ -1,5 +1,5 @@
 INSERT INTO poetry 
-(author, title,) 
+(author, title) 
 VALUES 
 ('Lang Leav', 'Love and Other Misadventures'),
 ('r.h. Sin', 'Empty Bottles Full of Stories'),
@@ -9,7 +9,7 @@ VALUES
 
 
 INSERT INTO sci-fi 
-(author, title,) 
+(author, title) 
 VALUES 
 ('Nnedi Okafor', ' Who Fears Death'),
 ('Mary Hoffman', 'Stravaganza: City of Masks'),
@@ -19,7 +19,7 @@ VALUES
 
 
 INSERT INTO romance 
-(author, title,) 
+(author, title) 
 VALUES 
 ('Carolyn Mackler', 'The Earth, My Butt, and Other Big Round Things'),
 ('Sarah Dessen', 'Saint Anything'),
@@ -29,7 +29,7 @@ VALUES
 
 
 INSERT INTO biographical
-(author, title,) 
+(author, title) 
 VALUES 
 ('Elie Wiesel', 'Night'),
 ('Ishmael Beah', 'A long Way Gone'),
@@ -38,7 +38,7 @@ VALUES
 ('Trevor Noah', 'Born A Crime');
 
 INSERT INTO mystery 
-(author, title,) 
+(author, title) 
 VALUES 
 ('Agatha Christie','Murder on the Orient Express'),
 ('Carlos Ruiz Zafron','The Shadow of the Wind'),
