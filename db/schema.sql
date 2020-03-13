@@ -6,7 +6,7 @@ CREATE TABLE poetry
 	id int NOT NULL AUTO_INCREMENT,
 	author varchar(255) NOT NULL,
 	title VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
 );
 
 
