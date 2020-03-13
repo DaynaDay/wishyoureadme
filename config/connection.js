@@ -1,23 +1,14 @@
-const mysql = require("mysql");
+const Sequelize = require("sequelize");
 
-// load environment variables
 require("dotenv").config();
 
-if (process.env.JAWSDB_URL) {
-  console.log("we're in production");
-} else {
-  console.log("We are in devlopment");
-}
-
-// create connection to db
-const connection = process.env.JAWSDB_URL
-  ? mysql.createConnection(process.env.JAWSDB_URL)
-  : mysql.createConnection({
+// create connection to our db
+const sequelize = process.env.JAWSDB_URL
+  ? new Sequelize(process.env.JAWSDB_URL)
+  : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
       host: "localhost",
-      port: 3306,
-      user: process.env.DB_USER,
-      password: process.env.DB_PW,
-      database: process.env.DB_NAME
+      dialect: "mysql",
+      port: 3306
     });
 
-module.exports = connection;
+module.exports = sequelize;
