@@ -1,7 +1,7 @@
 CREATE DATABASE book_wish_db;
 USE book_wish_db;
 
-CREATE TABLE pbooks
+CREATE TABLE books
 (
 	id int NOT NULL AUTO_INCREMENT,
 	author varchar(255) NOT NULL,
