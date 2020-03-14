@@ -29,11 +29,7 @@ Post.init(
         len: [1]
       }
     },
-  
-
-
-
-
+  },
   {
     sequelize
   }

@@ -1,3 +1,49 @@
+
+
+
+const { Book } = require('../models');
+​
+const bookdata = [
+  {
+    title: 'Murder on the Orient Express',
+    author: 'Agatha Christie',
+    category: 'Mystery'
+  },
+  {
+    title: 'Love and Other Misadventures',
+    author: 'Lang Leav',
+    category: 'Poetry'
+  }
+  {
+    title: 'Born a Crime',
+    author: 'Trevor Noah',
+    category: 'Biographical'
+  }
+  {
+    title: 'Midnight and the Meaning of Love',
+    author: 'Sistah Souljah',
+    category: 'Romance'
+  }
+  {
+    title: 'Who Fears Death',
+    author: 'Nnedi Okafor',
+    category: 'Scifi'
+  }
+];
+​
+Book.sync({ force: true }).then(() => {
+  Book.bulkCreate(bookdata)
+    .then(() => {
+      console.log('Books created!');
+      process.exit(1);
+    })
+    .catch(err => {
+      throw new Error(err);
+    });
+});
+
+
+-- OLD CODE
 -- INSERT INTO poetry 
 -- (author, title) 
 -- VALUES 
@@ -45,48 +91,6 @@
 -- ('Meg Cabot','Shadowland'),
 -- ('Sujata Massey','The Widows of Malabar Hill'),
 -- ('Nora DeLoach','Mama Solves a Murder');
-
-
-const { Book } = require('../models');
-​
-const bookdata = [
-  {
-    title: 'Murder on the Orient Express',
-    author: 'Agatha Christie',
-    category: 'Mystery'
-  },
-  {
-    title: 'Love and Other Misadventures',
-    author: 'Lang Leav',
-    category: 'Poetry'
-  }
-  {
-    title: 'Born a Crime',
-    author: 'Trevor Noah',
-    category: 'Biographical'
-  }
-  {
-    title: 'Midnight and the Meaning of Love',
-    author: 'Sistah Souljah',
-    category: 'Romance'
-  }
-  {
-    title: 'Who Fears Death',
-    author: 'Nnedi Okafor',
-    category: 'Scifi'
-  }
-];
-​
-Book.sync({ force: true }).then(() => {
-  Book.bulkCreate(bookdata)
-    .then(() => {
-      console.log('Books created!');
-      process.exit(1);
-    })
-    .catch(err => {
-      throw new Error(err);
-    });
-});
 
 
 
