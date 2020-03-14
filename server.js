@@ -13,14 +13,15 @@ app.use(express.json());
 //not sure.
 app.use(express.urlencoded({ extended: true }));
 
-
 // if you have a front-end...use express.static('public')
 app.use(express.static("public"));
 
 // turn on routes
- app.use(routes);
+app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: true }).then(() => {
-  app.listen(PORT, () => console.log("Now listening"));
+  app.listen(PORT, () =>
+    console.log("Server listening on: http://localhost:" + PORT)
+  );
 });

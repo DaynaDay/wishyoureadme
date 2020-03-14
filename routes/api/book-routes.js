@@ -1,14 +1,12 @@
 // import express router
-const router = require('express').Router();
+const router = require("express").Router();
 // import models
-const { Post, Book } = require('../../models');
+const { Book } = require("../../models");
 
 // get all Users with associated posts
 // will eventually be `/api/users`
-router.get('/', (req, res) => {
-  Book.findAll({
-    include: [Post]
-  })
+router.get("/", (req, res) => {
+  Book.findAll({})
     .then(userdata => res.json(userdata))
     .catch(err => {
       console.log(err);
@@ -17,12 +15,11 @@ router.get('/', (req, res) => {
 });
 
 // get a post by id with associated posts
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   Book.findOne({
     where: {
       id: req.params.id
-    },
-    include: [Post]
+    }
   })
     .then(userdata => res.json(userdata))
     .catch(err => {
@@ -32,7 +29,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create a new user
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   /* 
   {
     title: "Murder on the Orient Express",
