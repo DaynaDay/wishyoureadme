@@ -1,37 +1,34 @@
 // import express router
 const router = require('express').Router();
 // import models
-const { Post, Book } = require('../../models');
+const { Book } = require('../../models');
 
-// get all Users with associated posts
-// will eventually be `/api/users`
+// get all Books
+// will eventually be `/api/books`
 router.get('/', (req, res) => {
-  Book.findAll({
-    include: [Post]
-  })
-    .then(userdata => res.json(userdata))
+  Book.findAll({})
+    .then(bookdata => res.json(bookdata))
     .catch(err => {
       console.log(err);
       res.json(err);
     });
 });
 
-// get a post by id with associated posts
+// get a book by id
 router.get('/:id', (req, res) => {
   Book.findOne({
     where: {
       id: req.params.id
-    },
-    include: [Post]
+    }
   })
-    .then(userdata => res.json(userdata))
+    .then(bookdata => res.json(bookdata))
     .catch(err => {
       console.log(err);
       res.json(err);
     });
 });
 
-// create a new user
+// create a new book
 router.post('/', (req, res) => {
   /* 
   {
@@ -42,10 +39,24 @@ router.post('/', (req, res) => {
   */
 
   Book.create(req.body)
-    .then(userdata => res.json(userdata))
+    .then(bookdata => res.json(bookdata))
     .catch(err => {
       console.log(err);
       res.json(err);
     });
 });
+
+router.delete('/:id', (req, res) => {
+  Book.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(bookdata => res.json(bookdata))
+    .catch(err => {
+      console.log(err);
+      res.json(err);
+    });
+});
+
 module.exports = router;
