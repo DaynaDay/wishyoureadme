@@ -1,4 +1,5 @@
-const { Book } = require('../models');
+
+const { Book, User } = require('../models');
 const bookdata = [
   {
     title: 'Murder on the Orient Express',
@@ -26,15 +27,26 @@ const bookdata = [
     category: 'Scifi'
   }
 ];
-Book.sync({ force: true }).then(() => {
+Book.sync({ force: false }).then(() => {
   Book.bulkCreate(bookdata)
     .then(() => {
       console.log('Books created!');
-      process.exit(1);
     })
     .catch(err => {
       throw new Error(err);
     });
+});
+
+const userdata = [
+  {
+    name: 'Alex',
+    email: 'alex@alex.com',
+    password: 'password123'
+  }
+];
+
+User.bulkCreate(userdata, { individualHooks: true }).then(userdata => {
+  console.log('users created!');
 });
 
 

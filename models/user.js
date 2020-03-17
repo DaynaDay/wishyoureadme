@@ -1,9 +1,17 @@
 //pull in sequelize in node modules.
+<<<<<<< HEAD
 const { Model, DataTypes } = require("sequelize");
 //encripting the password
 const bcrypt = require("bcrypt");
 //communicating with mySQL database
 const sequelize = require("../config/connection");
+=======
+const { Model, DataTypes } = require('sequelize');
+//encripting the password
+const bcrypt = require('bcrypt');
+//communicating with mySQL database
+const sequelize = require('../config/connection');
+>>>>>>> 652a5bef0b650b7f992e49060904eaea54881e57
 
 // create our User model, look at sequalize documentation, builds user object in the same way to put in the database
 class User extends Model {
@@ -23,6 +31,10 @@ User.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+<<<<<<< HEAD
+=======
+      unique: true,
+>>>>>>> 652a5bef0b650b7f992e49060904eaea54881e57
       validate: {
         isEmail: true
       }
