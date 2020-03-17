@@ -46,6 +46,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// deletes book entry//
 router.delete('/:id', (req, res) => {
   Book.destroy({
     where: {
