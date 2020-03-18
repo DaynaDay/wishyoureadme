@@ -1,11 +1,11 @@
 // import express router
-const router = require('express').Router();
+const router = require("express").Router();
 // import models
-const { Book } = require('../../models');
+const { Book } = require("../../models");
 
 // get all Books
 // will eventually be `/api/books`
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   Book.findAll({})
     .then(bookdata => res.json(bookdata))
     .catch(err => {
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // get a book by id
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   Book.findOne({
     where: {
       id: req.params.id
@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create a new book
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   /* 
   {
     title: "Murder on the Orient Express",
@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete("/:id", (req, res) => {
   Book.destroy({
     where: {
       id: req.params.id
