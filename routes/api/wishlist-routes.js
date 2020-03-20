@@ -16,4 +16,20 @@ router.post('/', checkAuth, (req, res) => {
     });
 });
 
+router.delete("/:id", checkAuth, (req, res) => {
+  Wishlist.destroy({
+    where: {
+      BookId: req.params.id, 
+      UserId: req.id
+    }
+  })
+    .then(wishlistdata => res.json(wishlistdata))
+    .catch(err => {
+      console.log(err);
+      res.json(err);
+    });
+});
+
 module.exports = router;
+
+
