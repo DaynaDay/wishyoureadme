@@ -3,7 +3,7 @@ const routes = require('./routes');
 const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+const path = require("path")
 //middleware-ish. let server know we're using JSON
 app.use(express.json());
 //not sure.
