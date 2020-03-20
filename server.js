@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const path = require('path');
+=======
+
+>>>>>>> 55fe9d21fa279c7a84dbf00170d1781f48223b82
 const express = require('express');
 const routes = require('./routes');
 const sequelize = require('./config/connection');

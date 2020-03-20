@@ -27,7 +27,7 @@ const bookdata = [
     category: 'Scifi'
   }
 ];
-Book.sync({ force: false }).then(() => {
+Book.sync({ force: true}).then(() => {
   Book.bulkCreate(bookdata)
     .then(() => {
       console.log('Books created!');
