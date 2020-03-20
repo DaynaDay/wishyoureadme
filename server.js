@@ -1,4 +1,3 @@
-
 const express = require('express');
 const routes = require('./routes');
 const sequelize = require('./config/connection');
@@ -11,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // if you have a front-end...use express.static('public')
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // turn on routes
 app.use(routes);

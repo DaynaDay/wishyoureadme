@@ -29,5 +29,6 @@
   "bugs": {
     "url": "https://github.com/DaynaDay/wishyoureadme/issues"
   },
-  "homepage": "https://github.com/DaynaDay/wishyoureadme#readme"
+  "homepage": "https://github.com/DaynaDay/wishyoureadme#readme",
+  "devDependencies": {}
 }
