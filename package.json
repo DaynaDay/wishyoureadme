@@ -21,6 +21,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.5"
@@ -28,5 +29,6 @@
   "bugs": {
     "url": "https://github.com/DaynaDay/wishyoureadme/issues"
   },
-  "homepage": "https://github.com/DaynaDay/wishyoureadme#readme"
+  "homepage": "https://github.com/DaynaDay/wishyoureadme#readme",
+  "devDependencies": {}
 }
