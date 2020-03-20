@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Registration Form</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input id="signupName"type="text" placeholder="user-name"/>
+      <input id="signupPassword" type="text" placeholder="password"/>
+      <input id="signupEmail" type="text" placeholder="email id"/>
+      <button id="signupButton">Create</button>
+      <p class="message">Alredy Registered?<a href="#">Login</a></p>
+    </form>
+    
+    <form class="login-form">
+      <input id="loginEmail" type="text" placeholder="email id"/>
+      <input id="loginPassword" type="text" placeholder="password"/>
+      <button id="loginButton">login</button>
+      <p class="message">Not Registered?<a href="#">Register</a></p>
+
+    </form>
+
+  </div>
+</div> 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./assets/js/login.js"></script>
+<script>
+  $('.message a').click(function(){
+    $('form').animate({height:"toggle",opacity:"toggle"},"slow");
+  });
+</script>
+</body>
+</html>

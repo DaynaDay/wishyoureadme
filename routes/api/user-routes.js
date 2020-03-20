@@ -66,10 +66,12 @@ router.post('/', (req, res) => {
         },
         'shhhhh'
       );
+      console.log("usercreated");
       res.json({ userdata, token });
     })
     .catch(err => {
       console.log(err);
+
       res.json(err);
     });
 });
