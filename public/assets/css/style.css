@@ -18,12 +18,15 @@ h1{
   text-align: center;
 }
 
+
 div{
+
   color: #ffffff;
 }
 p{
-  color: rgb(35, 15, 218);
+  color: rgb(91, 73, 245);
   font-family: cursive;
+  text-align: center;
 }
 
 .login-page{
