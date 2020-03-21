@@ -1,6 +1,6 @@
 // express router in a variable
 const router = require("express").Router();
-
+const path = require("path")
 // collect all api endpoints in api index page
 const apiRoutes = require("./api");
 
@@ -8,7 +8,7 @@ const apiRoutes = require("./api");
 router.use("/api", apiRoutes);
 
 router.get('/books', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/books.html'));
+  res.sendFile(path.join(__dirname, "../public/book-page.html"));
 });
 // IF WE HAD HTML ROUTES, THEY'D BE SET UP HERE
 module.exports = router;
