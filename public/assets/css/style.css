@@ -12,6 +12,20 @@ h2{
   
 }
 
+h1{
+  font-family: cursive;
+  color: black ;
+  text-align: center;
+}
+
+div{
+  color: #ffffff;
+}
+p{
+  color: rgb(35, 15, 218);
+  font-family: cursive;
+}
+
 .login-page{
   width: 360px;
   padding: 10% 0 0;

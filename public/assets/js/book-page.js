@@ -14,11 +14,11 @@
 // $.ajax(settings).done(function (response) {
 //   console.log(response);
 // });
-
+//GET ALL BOOKS
 var getAllBooks = document.getElementById("Add");
 getAllBooks.addEventListener("click",function(e){
   e.preventDefault()
-//GET ALL BOOKS
+
 var settings = {
   "async": true,
   "crossDomain": true,
